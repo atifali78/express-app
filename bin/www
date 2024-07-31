@@ -29,7 +29,7 @@ var server = http.createServer(app);
     server.listen(port);
     server.on("error", onError);
     server.on("listening", onListening);
-    return `app is running on pert ${port}`;
+    return `Atif your app is running on port ${port}`;
   } catch (error) {
     return error;
   }
