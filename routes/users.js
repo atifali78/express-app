@@ -8,7 +8,11 @@ routes.get("/update", (req, res) => {
 routes.get("/delete", (req, res) => {
   return res.send("delete user Api");
 });
-routes.get("/put", (req, res) => {
+routes.get("/upsert", (req, res) => {
+  return res.send("Put user Api");
+});
+
+routes.get("/patch", (req, res) => {
   return res.send("Put user Api");
 });
 module.exports = routes;
