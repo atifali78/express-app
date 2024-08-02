@@ -1,8 +1,5 @@
-var express = require("express");
-var router = express.Router();
-
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.send("This is my first application");
+var routes = require("express").Router();
+routes.get("/get-Home", (req, res) => {
+  return res.send("welcome to home");
 });
-module.exports = router;
+module.exports = routes;
