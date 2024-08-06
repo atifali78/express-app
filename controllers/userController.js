@@ -1,4 +1,5 @@
 module.exports = {
+  //create request create
   create: (req, res) => {
     try {
       return res.send({
@@ -10,6 +11,7 @@ module.exports = {
       });
     }
   },
+  //get resquest create
   getAll: (req, res) => {
     try {
       return res.send({
