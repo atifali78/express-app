@@ -1,13 +1,12 @@
 const user = [];
-
+ 
 module.exports = {
   //create request create
   create: (req, res) => {
     try {
-      const newuser = { ...req.body };
       user.push(req.body);
       return res.send({
-        response: response,
+        response:newuser;
       });
     } catch (error) {
       return res.send({
