@@ -3,8 +3,9 @@ const user[];
 module.exports = {
     create: { req, res }=>
     try{
-        const{ user, password } = req.body;
-        const isUserexist = user.map(user)=>{ };
+    }
+        const { user, password } = req.body;
+        const isUserexist = user.map(user) => {
 user.push({ username, password });
 return res.send{
     response: user,

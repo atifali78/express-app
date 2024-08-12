@@ -1,5 +1,5 @@
 const user = [];
- 
+  
 module.exports = {
   //create request create
   create: (req, res) => {
@@ -12,6 +12,7 @@ module.exports = {
       return res.send({
         error: error,
       });
+      
     }
   },
   //get resquest create

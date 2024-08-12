@@ -1,44 +1,19 @@
-const { getAll } = require("./userController")
+const { getAll } = require("./userController");
 
 module.exports = {
-    create: { req, res }=>
-    try{
-        return res.send{
-    (
-        response: "admin already exist",
-             
-    )};
-    
-    catch (error) {
-        return.res.send({
-            error: error;
-        })
-    }
-    }
-getAll: (req, res) => {
-    try {
-        return res.send{
-            (
-                response: "student already exist",
-            )};
-    
-    }}
-    catch (error) {
-        return.res.send({
-            error: error;
-        });
-        del: (req, res) => {
-            try {
-                return res.send{
-                    (
-                        response: "delete successfully",
-                    )};
-    
-            }
-            catch (error) {
-                return.res.send({
-                    error: error;
-                });
-            }
+    create: (req, res) => { // Corrected the arrow function syntax
+        try {
+            return res.send({
+                response: "admin already exists", // Corrected the response syntax
+            });
+        } catch (error) {
+            return res.status(500).send({
+                error: error.message, // Corrected error handling
+            });
         }
-    }
+    },
+
+    getAll: (req, res) => { // Corrected the arrow function syntax
+        try {
+            return res.send({
+                response: "student
