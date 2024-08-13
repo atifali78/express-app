@@ -1,19 +1,22 @@
 const { getAll } = require("./userController");
 
 module.exports = {
-    create: (req, res) => { // Corrected the arrow function syntax
+    create: (req, res) => { 
         try {
             return res.send({
-                response: "admin already exists", // Corrected the response syntax
+                response: "admin already exists", 
             });
+        }
         } catch (error) {
             return res.status(500).send({
-                error: error.message, // Corrected error handling
+                error: error.message, 
             });
         }
     },
 
-    getAll: (req, res) => { // Corrected the arrow function syntax
+    getAll: (req, res) => { 
         try {
             return res.send({
-                response: "student
+                response: "student"
+            }
+        )}};

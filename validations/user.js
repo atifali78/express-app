@@ -1,14 +1,13 @@
-const joi = require("joi");
+const Joi = require("joi");
 
 module.exports = {
   createUserSchema: async (req, res, next) => {
-    const createuser = joi.object({
-      username: joi.string().min(3).max(34).required(),
-      password: joi.string().min(6).max(18).required(),
+    const createUser = Joi.object({
+      username: Joi.string().min(4).max(32).required(),
+      password: Joi.string().min(6).max(18).required(),
     });
-
     try {
-      const validate = await createuser.validateAsync(req.body);
+      const validate = await createUser.validateAsync(req.body);
       next();
     } catch (error) {
       return res.send({
