@@ -8,6 +8,7 @@ var app = require("../app");
 var debug = require("debug")("express-app:server");
 var http = require("http");
 const { connectDb } = require("./dbConnection");
+var {db}= require ("./dbConnection/")
 /**
  * Get port from environment and store in Express.
  */

@@ -1,3 +1,5 @@
+require("dotenv").config(),
+  
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize("mr19", "postgres", "4136806", {
@@ -13,16 +15,14 @@ const sequelize = new Sequelize("mr19", "postgres", "4136806", {
 //   .catch((error) => {
 //     console.error(error.message);
 //   });
-const connectDb = async() => {
-    
-    try {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+const connectDb = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
 };
 
-
 module.exports = sequelize;
-module.exports ={connectDb}
+module.exports = { connectDb };
