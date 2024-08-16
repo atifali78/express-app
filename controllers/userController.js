@@ -1,9 +1,12 @@
+const { required } = require("joi");
+
+const { creatUser } = required("../model/userModel");
 var user = [];
 
 module.exports = {
-  create: (req, res) => {
+  create:async (req, res) => {
     try {
-      const { username, password } = req.body;
+      const user=await createUser { req.body; } 
       user.push({ username, password });
 
       return res.send({

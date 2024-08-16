@@ -6,3 +6,5 @@ const models = { users };
 const db = {};
 db.sequelize = sequelize;
 sequelize.model = models;
+
+sequelize.model = { db, models };

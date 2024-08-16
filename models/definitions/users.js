@@ -23,6 +23,10 @@ users.init(
     paranoid: true,
     modelName: "users",
     sequelize,
+    
   }
 );
+users.beforeCreate((user) =>){
+  
+}
 module.exports = users;

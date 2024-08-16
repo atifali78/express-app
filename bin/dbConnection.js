@@ -1,28 +1,25 @@
-require("dotenv").config(),
-  
+// configuring the package
+require("dotenv").config();
+// import the package of sequelize by de-structing
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("mr19", "postgres", "4136806", {
-  host: "localhost",
-  dialect: "postgres",
+const sequelize = new Sequelize({
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  dialect: process.env.DB_DIALECT,
 });
 
-// sequelize
-//   .authenticate()
-//   .than(() => {
-//     console.log("Connection has been established successfully.");
-//   })
-//   .catch((error) => {
-//     console.error(error.message);
-//   });
-const connectDb = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
-};
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("connected to Database");
+  })
+  .catch((error) => {
+    console.log("Error connecting to Database", error);
+  });
 
 module.exports = sequelize;
-module.exports = { connectDb };
+
