@@ -16,6 +16,7 @@ users.init(
     },
     password: {
       type: DataTypes.STRING(256),
+      unique: true;
       allowNull: false,
     },
   },
@@ -28,7 +29,5 @@ users.init(
     
   }
 );
-users.beforeCreate((user) =>){
-  
-}
+
 module.exports = users;
