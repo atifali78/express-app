@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../../bin/dbConnection");
-class users extends Model { }
+const roles = require("./roles");
+// const{role}=??????
+class Users extends Model {}
 
-
-users.init(
+Users.init(
   {
     UserId: {
       type: DataTypes.STRING(60),
@@ -16,9 +17,14 @@ users.init(
     },
     password: {
       type: DataTypes.STRING(256),
-      unique: true;
+      // unique: true;
       allowNull: false,
     },
+    // roleId: {
+    //   type: DataTypes.STRING(255),
+    //   allowNull:false,
+    //   references: roleId,
+    //   modelName
   },
 
   {
@@ -26,8 +32,7 @@ users.init(
     paranoid: true,
     modelName: "users",
     sequelize,
-    
   }
 );
 
-module.exports = users;
+module.exports = Users;

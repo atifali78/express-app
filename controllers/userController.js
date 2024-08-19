@@ -1,12 +1,12 @@
-const { required } = require("joi");
+// const { required } = require("joi");
 
-const { creatUser } = required("../model/userModel");
+const { createUser } = require("../models/definitions/userModel");
 var user = [];
 
 module.exports = {
-  create:async (req, res) => {
+  create: async (req, res) => {
     try {
-      const user=await createUser { req.body; } 
+      const user = await createUser(req.body);
       user.push({ username, password });
 
       return res.send({
@@ -18,7 +18,6 @@ module.exports = {
       });
     }
   },
-
   getAll: (req, res) => {
     try {
       return res.send({

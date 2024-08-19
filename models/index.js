@@ -7,4 +7,4 @@ const db = {};
 db.sequelize = sequelize;
 sequelize.model = models;
 
-module.model = { db, models };
+module.exports = { db, models };

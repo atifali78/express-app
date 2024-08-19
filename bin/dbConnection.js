@@ -1,3 +1,4 @@
+
 // configuring the package
 require("dotenv").config();
 // import the package of sequelize by de-structing

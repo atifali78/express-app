@@ -7,7 +7,7 @@ var userRouter = require("./routes/userRouter");
 
 var app = express();
 
-// view engine setuppp
+// view engine setup
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
